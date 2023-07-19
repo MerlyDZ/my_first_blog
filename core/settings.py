@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.home', # Enable the inner home (home)
-    'apps.app',
+    'apps.authentication',
+    'apps.main',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
+AUTH_USER_MODEL = 'authentication.User'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #############################################################

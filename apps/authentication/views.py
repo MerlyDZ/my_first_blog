@@ -38,19 +38,26 @@ def register_user(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get("username")
-            raw_password = form.cleaned_data.get("password1")
-            user = authenticate(username=username, password=raw_password)
+            # form.save()
+            # username = form.cleaned_data.get("username")
+            # raw_password = form.cleaned_data.get("password1")
+            # user = authenticate(username=username, password=raw_password)
 
-            msg = 'User created - please <a href="/login">login</a>.'
-            success = True
-
+            # msg = 'User created - please <a href="/login">login</a>.'
+            # success = True
+            print(form.is_valid())
+            user = form.save()
+            print(request.POST)
+            # messages.success(request, 'compte créé avec succes')
+            #auto-login user
+            # login(request, user)
+            return redirect('login')
             # return redirect("/login/")
 
         else:
             msg = 'Form is not valid'
+            print(form.errors)
     else:
         form = SignUpForm()
 
-    return render(request, "accounts/register.html", {"form": form, "msg": msg, "success": success})
+    return render(request, "authentication/register.html", {"form": form, "msg": msg, "success": success})
