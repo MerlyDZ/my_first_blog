@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modification de l'adresse e-mail</title>
+</head>
+<body>
+    <h1>Modification de l'adresse e-mail</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Modifier l'adresse e-mail</button>
+    </form>
+</body>
+</html>

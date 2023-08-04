@@ -5,6 +5,7 @@ Copyright (c) 2019 - present AppSeed.us
 
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -24,7 +25,12 @@ class User(AbstractUser):
     nationality = models.CharField(max_length=100)
     contacts = models.CharField(max_length=100)
 
-    class Mete:
+    class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"
+
+
+# class CustomUser(AbstractUser):
+#     new_username = models.CharField(max_length=150, unique=True, blank=True, null=True)
+
 

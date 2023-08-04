@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Changer l'Email</title>
+</head>
+<body>
+
+    <h1>Changer l'Email</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'profil' %}"><button type="submit">Changer l'Email</button></a>
+    </form>
+    
+</body>
+</html>

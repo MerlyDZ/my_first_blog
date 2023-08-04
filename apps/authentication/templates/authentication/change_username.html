@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modification du username</title>
+</head>
+<body>
+
+    <h1>Modification du username</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'profil' %}"><button type="submit">Changer le username</button></a>
+    </form>
+    
+</body>
+</html>

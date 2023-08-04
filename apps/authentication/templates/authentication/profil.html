@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+
+</head>
+<body>
+       
+
+                                <h2>Profile</h2> 
+                                <p><strong>Username:</strong> {{ user.username }} &nbsp; &nbsp;<a href="{% url 'change_username' %}"><button type="submit" name="Edit" class="btn btn-gray-800">Modifier</button></a></p>
+                                 <br>
+                                <p><strong>Password:</strong> {{ user.password }}&nbsp; &nbsp;<a href="{% url 'change_password' %}"><button type="submit" name="Edit" class="btn btn-gray-800">Modifier</button></a></p>
+                                <br>
+                                <p><strong>Email:</strong> {{ user.email }}&nbsp; &nbsp;<a href="{% url 'change_email' %}"><button type="submit" name="Edit" class="btn btn-gray-800">Modifier</button></a></p>
+                                        
+  
+
+</body>
+</html>
